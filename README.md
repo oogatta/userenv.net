@@ -1,0 +1,4 @@
+userenv.info
+============
+
+MIT License
