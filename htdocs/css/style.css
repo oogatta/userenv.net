@@ -1,0 +1,196 @@
+/* common */
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #02243C;
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3",sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  line-height: 1.3em;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a img {
+  border: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+/*  text-decoration: none;*/
+/*  color: #b0c4de;*/
+  text-decoration: underline;
+  color: #e6e6fa;
+}
+
+/* contents */
+div#header {
+  padding-top: 10px;
+  padding-left: 20px;
+  margin-bottom: 5px;
+}
+
+div#header h1 {
+}
+
+div#header p {
+  font-size: 0.8em;
+}
+
+div#container {
+  width: 100%;
+  position: relative;
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
+}
+
+body > #container {
+  height: auto;
+}
+
+div#content {
+  margin: 0 auto 0 auto;
+  width: 760px;
+  padding-bottom: 70px;
+}
+
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+div#envFlash {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+div#menu {
+  font-size: 0.8em;
+  margin: 0 auto;
+  width: 725px;
+  padding: 5px 0 5px 15px;
+  color: #e6e6fa;
+  background-color: #708090;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+div#menu ul li {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  background: transparent url(../images/arrow.gif) no-repeat left center;
+  padding-left: 12px;
+}
+
+div#menu ul li a {
+  display: block;
+  padding: 3px;
+  text-decoration: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+div#menu ul li a.hover,
+div#menu ul li a:hover {
+  color: #02243C;
+  background-color: #b0c4de;
+}
+
+#copyToClipboardFlash {
+  position: absolute;
+  left: 12px;
+  top: 0px;
+}
+
+div.sections {
+  margin: 0 auto;
+  display: table;
+  border-collapse: separate ;
+  border-spacing: 10px;
+  margin-bottom: -10px;
+}
+
+div.sections div.section {
+  width: 355px;
+  display: table-cell;
+  padding: 10px;
+  background-color: #dcdcdc;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+}
+
+div.sections div.section.large {
+  width: 740px;
+}
+
+div.sections div.section h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  padding-left: 20px;
+  background: transparent url(../images/disc.gif) no-repeat left center;
+}
+
+div.sections div.section div.env {
+  border-top: 2px solid #c0c0c0;
+  padding-top: 10px;
+  font-family: 'ＭＳ ゴシック', '平成角ゴシック', monospace;
+}
+
+div.section p {
+}
+
+div.section span.caution {
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+div.section table,
+div.section table tr,
+div.section table th,
+div.section table td {
+  margin: 0;
+  padding: 0;
+}
+
+div.section table th {
+  font-weight: normal;
+  text-align: left;
+}
+
+div#footer {
+  position: absolute;
+  height: 50px;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #e6e6fa;
+  background-color: #708090;
+}
+
+div#footer p {
+  vertical-align: baseline;
+  line-height: 50px;
+}

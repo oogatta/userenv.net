@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="ja">
+    <meta name="keywords" content="flash,flashplayer,browser,version,os,フラッシュ,バージョンチェック,ブラウザ">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta http-equiv="content-style-type" content="text/css">
+    <title>Flash Player やブラウザのバージョンチェック</title>
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript" src="js/swfobject.js"></script>
+    <script type="text/javascript" src="js/ecl.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </head>
+  <body>
+
+    <!-- container -->
+    <div id="container">
+
+      <!-- envFlash -->
+      <div id="envFlash"></div>
+      <!-- /envFlash -->
+
+      <!-- header -->
+      <div id="header">
+        <h1><a href="./"><img src="images/logo.gif" width="290" height="39" alt="userenv.info"></a></h1>
+        <p>Flash Player やブラウザのバージョンチェックサイトです。</p>
+        <p id="accessDate">
+            <?php
+            echo "アクセス日: " . date('Y 年 n 月 j 日 (D) H:i:s');
+            ?>
+        </p>
+      </div>
+      <!-- /header -->
+
+      <!-- content -->
+      <div id="content">
+
+        <!-- menu -->
+        <div id="menu">
+          <ul>
+            <li id="copyToClipboard"><div id="copyToClipboardFlash"></div><a href="javascript:void(null);">クリップボードにコピー</a></li>
+            <li id="sendToMail"><a href="javascript:void(null);">メールで送信</a></li>
+          </ul>
+        </div>
+        <!-- /menu -->
+
+        <!-- sections -->
+        <div class="sections">
+
+          <!-- section -->
+          <div class="section large">
+            <h3>ブラウザ情報</h3>
+            <div class="env">
+              <p id="userAgent">
+              <?php
+              echo htmlspecialchars($_SERVER['HTTP_USER_AGENT']);
+              ?>
+              </p>           
+            </div>
+          </div>
+          <!-- section -->
+        </div>
+        <!-- sections -->
+
+        <!-- sections -->
+        <div class="sections">
+          <!-- section -->
+          <div class="section">
+            <h3>OS</h3>
+            <div class="env">
+              <p id="os">
+              <noscript>
+                <span class="caution">表示するには JavaScript を有効にしてください</span>
+              </noscript>
+              </p>           
+            </div>
+          </div>
+          <!-- /section -->
+
+          <!-- section -->
+          <div class="section">
+            <h3>Flash Player のバージョン</h3>
+            <div class="env">
+              <p id="flashPlayerVersion">
+              <noscript>
+                <span class="caution">表示するには JavaScript を有効にしてください</span>
+              </noscript>
+              </p>
+          </div>
+          </div>
+          <!-- section -->
+        </div>
+        <!-- sections -->
+
+        <!-- sections -->
+        <div class="sections">
+          <!-- section -->
+          <div class="section">
+            <h3>JavaScript</h3>
+            <div class="env">
+              <p id="enableJavaScript">
+              <script type="text/javascript">
+                document.write("有効");
+              </script>
+              <noscript>無効</noscript>
+              </p>
+            </div>
+          </div>
+          <!-- /section -->
+
+          <!-- section -->
+          <div class="section">
+            <h3>Cookie</h3>
+            <div class="env">
+               <p id="enableCookie">
+                <noscript>
+                  <span class="caution">表示するには JavaScript を有効にしてください</span>
+                </noscript>
+              </p>           
+            </div>
+          </div>
+          <!-- section -->
+        </div>
+        <!-- sections -->
+
+        <!-- sections -->
+        <div class="sections">
+
+          <!-- section -->
+          <div class="section">
+            <h3>モニタの解像度</h3>
+            <div class="env">
+              <table>
+                <tr>
+                  <th>幅: </th>
+                  <td id="screenWidth"></td>
+                </tr>
+                <tr>
+                  <th>高さ: </th>
+                  <td id="screenHeight"></td>
+                </tr>
+                <tr>
+                  <th>色数: </th>
+                  <td id="screenColor"></td>
+                </tr>
+              </table>
+              <noscript>
+                <span class="caution">表示するには JavaScript を有効にしてください</span>
+              </noscript>
+            </div>
+          </div>
+          <!-- /section -->
+
+          <!-- section -->
+          <div class="section">
+            <h3>ブラウザ (描画領域) のサイズ</h3>
+            <div class="env">
+              <table>
+                <tr>
+                  <th>幅: </th>
+                  <td id="browserWidth"></td>
+                </tr>
+                <tr>
+                  <th>高さ: </th>
+                  <td id="browserHeight"></td>
+                </tr>
+              </table>
+              <noscript>
+                <span class="caution">表示するには JavaScript を有効にしてください</span>
+              </noscript>
+            </div>
+          </div>
+          <!-- /section -->
+
+        </div>
+        <!-- sections -->
+
+        <!-- sections -->
+        <div class="sections">
+
+          <!-- section -->
+          <div class="section">
+            <h3>IP アドレス</h3>
+            <div class="env">
+              <p id="ipAddress">
+                <?php
+                echo htmlspecialchars($_SERVER['REMOTE_ADDR']);
+                ?>
+              </p>
+            </div>
+          </div>
+          <!-- /section -->
+
+          <!-- section -->
+          <div class="section">
+            <h3>ホスト名</h3>
+            <div class="env">
+              <p id="hostName">
+                <?php
+                  echo htmlspecialchars(gethostbyaddr($_SERVER['REMOTE_ADDR']));
+                ?>
+              </p>
+            </div>
+          </div>
+          <!-- /section -->
+        </div>
+        <!-- sections -->
+
+      </div>
+      <!-- /content -->
+
+      <!-- footer -->
+      <div id="footer">
+        <p>created by <a href="http://twitter.com/tanabe/">@tanabe</a> &lt;<a href="http://blog.kaihatsubu.com/">blog.kaihatsubu.com</a>&gt;</p>
+      </div>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+      try {
+      var pageTracker = _gat._getTracker("UA-73660-6");
+      pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
+      
+  </body>
+</html>
